@@ -24,8 +24,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => { /* 全局前置钩子 */
   document.title = to.meta.title || 'Unknow title'
-  // document.getElementById('keywords').setAttribute('content', '123123')
-  // document.getElementById('description').setAttribute('content', '123123')
   next()
 })
 router.beforeResolve((to, from, next) => { /* 全局解析守卫 */

@@ -4,20 +4,34 @@ import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
+const router = new Router({
+  routes: [{
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta:{
+        title:'币势得'
+      }
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () =>
+        import ('./views/About.vue')
     }
   ]
 })
+
+router.beforeEach((to, from, next) => { /* 全局前置钩子 */
+  document.title = to.meta.title || 'Unknow title'
+  // document.getElementById('keywords').setAttribute('content', '123123')
+  // document.getElementById('description').setAttribute('content', '123123')
+  next()
+})
+router.beforeResolve((to, from, next) => { /* 全局解析守卫 */
+  next()
+})
+router.afterEach((to, from) => { /* 全局后置钩子 */ })
+
+
+export default router

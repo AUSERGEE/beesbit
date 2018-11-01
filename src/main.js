@@ -1,20 +1,22 @@
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import './registerServiceWorker'
 import iView from 'iview'
-import 'iview/dist/styles/iview.css'
 import axios from 'axios'
+import store from './store'
+import App from './App.vue'
+import vuex from 'vuex'
+import router from './router'
+import './registerServiceWorker'
 import 'swiper/dist/css/swiper.css'
+import 'iview/dist/styles/iview.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import './index.less'
 
 // require styles
 import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 
-Vue.use(iView, VueAxios, axios, VueAwesomeSwiper)
+Vue.use(iView, VueAxios, axios, VueAwesomeSwiper, vuex)
 new Vue({
   router,
   store,

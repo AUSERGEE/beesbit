@@ -1,6 +1,8 @@
 <template>
 <section id="footer">
-  <Footer class="layout-footer-center">2018 &copy; 币势得</Footer>
+  <Content class="noPadding">
+    <Footer class="layout-footer-center">2018 &copy; 币势得</Footer>
+  </Content>
 </section>
 </template>
 

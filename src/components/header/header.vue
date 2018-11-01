@@ -3,21 +3,9 @@
   <Content class="noPadding">
     <Header>
       <Menu mode="horizontal" :active-name="name" @on-select="select">
-        <div class="layout-logo">币势得</div>
+        <!-- <div class="layout-logo">{{PageList.PageList.main}}</div> -->
         <div class="layout-nav">
-          <MenuItem :to="{name:'home',query:{id:1}}" :name="1"> 首页
-          </MenuItem>
-          <MenuItem :to="{name:'guide',query:{id:2}}" :name="2"> 指南
-          </MenuItem>
-          <MenuItem :to="{name:'help',query:{id:3}}" :name="3"> 帮助
-          </MenuItem>
-          <MenuItem :to="{name:'notice',query:{id:4}}" :name="4"> 公告
-          </MenuItem>
-          <MenuItem :to="{name:'about',query:{id:5}}" :name="5"> 关于
-          </MenuItem>
-        </div>
-        <div class="layout-nav">
-          <MenuItem :to="{name:'home',query:{id:1}}" :name="6"> 登录 | 注册
+          <MenuItem v-for="(item,index) in PageList" :to="{name:PageList.path,query:{id:index}}" :name="1">{{PageList.name}}
           </MenuItem>
         </div>
       </Menu>
@@ -27,10 +15,14 @@
 </template>
 
 <script>
+import {
+  PageList
+} from '@/libs/nameList' //命名配置
 export default {
   data() {
     return {
       name: 1,
+      // PageList:[]
     }
   },
   methods: {
@@ -38,6 +30,16 @@ export default {
       console.log(val);
       this.name = val
     }
+  },
+  computed:{
+    PageList:function(){
+      return PageList
+    }
+  },
+  mounted() {
+    console.log(PageList);
+    this.PageList = PageList
+
   }
 }
 </script>

@@ -16,6 +16,10 @@
           <MenuItem :to="{name:'about',query:{id:5}}" :name="5"> 关于
           </MenuItem>
         </div>
+        <div class="layout-nav">
+          <MenuItem :to="{name:'home',query:{id:1}}" :name="6"> 登录 | 注册
+          </MenuItem>
+        </div>
       </Menu>
     </Header>
   </Content>

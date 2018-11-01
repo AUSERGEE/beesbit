@@ -14,7 +14,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
     </div>
-    <section id="why">
+    <section id="about">
       <Content class="contentPadding">
         <h3>新手引导教程</h3>
         <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
@@ -52,39 +52,42 @@
                 </Card>
               </Row>
             </TabPane>
+            <TabPane label="标签三">
+              <Row type="flex" :gutter="16" justify="space-between">
+                <Card v-for="(item,index) in 3">
+                  <div style="text-align:center">
+                    <h6>111111111111111111111111111111111111111111111</h6>
+                    <Button @click="modal=true">123</Button>
+                  </div>
+                </Card>
+              </Row>
+            </TabPane>
+            <TabPane label="标签三">
+              <Row type="flex" :gutter="16" justify="space-between">
+                <Card v-for="(item,index) in 3">
+                  <div style="text-align:center">
+                    <h6>111111111111111111111111111111111111111111111</h6>
+                    <Button @click="modal=true">123</Button>
+                  </div>
+                </Card>
+              </Row>
+            </TabPane>
           </Tabs>
           </Col>
         </Row>
       </Content>
     </section>
-    <section id="merit">
+    <section id="choose">
       <Content class="contentPadding">
         <h3>视频教程</h3>
         <Row type="flex" :gutter="12" justify="space-between">
-          <Col v-for="(item,index) in 3" span="8">
+          <Col v-for="(item,index) in 2" span="12">
           <Card>
             <div style="text-align:center">
               <img src="">
-              <h6>币势得币势得币势得币势得币势得币势得币势得币势得币势得</h6>
+              <h6 v-for="(item,index) in 6">币势得币势得币势得币势得币势得币势得币势得币势得币势得</h6>
             </div>
           </Card>
-          </Col>
-        </Row>
-      </Content>
-    </section>
-    <section id="slogen">
-      <Content class="contentPadding">
-        <h3>常见问题与解答</h3>
-        <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
-        </p>
-        <Row type="flex" :gutter="12" justify="center">
-          <Col span="12" v-for="(item,index) in 12">
-          <Collapse simple>
-            <Panel name="1">
-              币势得云算力
-              <p slot="content">币势得</p>
-            </Panel>
-          </Collapse>
           </Col>
         </Row>
       </Content>

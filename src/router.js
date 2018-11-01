@@ -1,5 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+const home = r => require.ensure([], () => r(require('./views/Front/Home/Home.vue')), 'home')
+const about = r => require.ensure([], () => r(require('./views/Front/About/About.vue')), 'about')
+const guide = r => require.ensure([], () => r(require('./views/Front/Guide/Guide.vue')), 'guide')
+const help = r => require.ensure([], () => r(require('./views/Front/Help/Help.vue')), 'help')
+const notice = r => require.ensure([], () => r(require('./views/Front/Notice/Notice.vue')), 'notice')
+const user = r => require.ensure([], () => r(require('./views/Front/User/User.vue')), 'user')
 
 Vue.use(Router)
 
@@ -7,8 +13,7 @@ const router = new Router({
   routes: [{
       path: '/',
       name: 'home',
-      component: () =>
-        import ('./views/Front/Home/Home.vue'),
+      component: home,
       meta: {
         title: '币势得云算力'
       }
@@ -16,8 +21,7 @@ const router = new Router({
     {
       path: '/about',
       name: 'about',
-      component: () =>
-        import ('./views/Front/About/About.vue'),
+      component: about,
       meta: {
         title: '关于-币势得'
       }
@@ -25,8 +29,7 @@ const router = new Router({
     {
       path: '/guide',
       name: 'guide',
-      component: () =>
-        import ('./views/Front/Guide/Guide.vue'),
+      component: guide,
       meta: {
         title: '指南-币势得'
       }
@@ -34,8 +37,7 @@ const router = new Router({
     {
       path: '/help',
       name: 'help',
-      component: () =>
-        import ('./views/Front/Help/Help.vue'),
+      component: help,
       meta: {
         title: '帮助-币势得'
       }
@@ -43,10 +45,17 @@ const router = new Router({
     {
       path: '/notice',
       name: 'notice',
-      component: () =>
-        import ('./views/Front/Notice/Notice.vue'),
+      component: notice,
       meta: {
-        title: '公共-币势得'
+        title: '公告-币势得'
+      }
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: user,
+      meta: {
+        title: '登录/注册-币势得'
       }
     },
   ]

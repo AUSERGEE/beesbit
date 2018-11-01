@@ -63,7 +63,7 @@
         </p>
         <Row type="flex" :gutter="12" justify="space-between">
           <Col v-for="(item,index) in 4" span="6">
-          <Card >
+          <Card>
             <div style="text-align:center">
               <img src="">
               <h6>币势得币势得币势得币势得币势得币势得币势得币势得币势得</h6>
@@ -81,6 +81,10 @@
 <script>
 import Header from '#/header'
 import Footer from '#/footer'
+import {
+  getToken,
+  setToken
+} from '@/libs/util'
 import {
   swiper,
   swiperSlide
@@ -112,7 +116,6 @@ export default {
     swiperSlide
   },
   mounted() {
-
   }
 }
 </script>

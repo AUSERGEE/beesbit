@@ -31,11 +31,6 @@ export default {
       this.name = val
     }
   },
-  computed:{
-    PageList:function(){
-      return PageList
-    }
-  },
   mounted() {
     console.log(PageList);
     this.PageList = PageList

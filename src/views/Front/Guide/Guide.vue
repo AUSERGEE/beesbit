@@ -1,4 +1,3 @@
-
 <template>
 <div class="layout">
   <Header></Header>
@@ -15,20 +14,18 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
     </div>
-    <section id="introduce">
+    <section id="why">
       <Content class="contentPadding">
-        <h3>币势得</h3>
+        <h3>为什么选择云计算挖矿？</h3>
         <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
         </p>
       </Content>
     </section>
-    <section id="service">
+    <section id="merit">
       <Content class="contentPadding">
-        <h3>我们的服务</h3>
-        <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
-        </p>
-        <Row type="flex" getter="12" justify="space-between">
-          <Col v-for="(item,index) in 3" span="6">
+        <h3>云算力挖矿的优点</h3>
+        <Row type="flex" :gutter="12" justify="space-between">
+          <Col v-for="(item,index) in 6" span="8">
           <Card>
             <div style="text-align:center">
               <img src="">
@@ -39,36 +36,16 @@
         </Row>
       </Content>
     </section>
-    <section id="combo">
+    <section id="slogen">
       <Content class="contentPadding">
-        <h3>运算力套餐</h3>
+        <h3>从现在开始币势得云挖矿</h3>
         <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
         </p>
-        <Row type="flex" getter="12" justify="space-between">
-          <Col v-for="(item,index) in 3" span="6">
-          <Card>
-            <div style="text-align:center">
-              <img src="">
-              <h6>币势得币势得币势得币势得币势得币势得币势得币势得币势得</h6>
-            </div>
-          </Card>
-          </Col>
-        </Row>
-      </Content>
-    </section>
-    <section id="advantage">
-      <Content class="contentPadding">
-        <h3>我们的优势</h3>
-        <p>币势得云算力平台是国内先进的云算力数字投资平台。我们拥有最专业的云算力解决方案:我们拥有强大的技术团队，确保云算力的稳定运行;我们会员的收益尤为显著!加入币势得会员,您 可以在币势得享受更多优质服务。
-        </p>
-        <Row type="flex" :getter="12" justify="space-between">
-          <Col v-for="(item,index) in 4" span="6">
-          <Card >
-            <div style="text-align:center">
-              <img src="">
-              <h6>币势得币势得币势得币势得币势得币势得币势得币势得币势得</h6>
-            </div>
-          </Card>
+        <Row type="flex" justify="center">
+          <Col span="6">
+            <Button type="error" long>
+              立即部署算力
+            </Button>
           </Col>
         </Row>
       </Content>

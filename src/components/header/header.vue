@@ -3,9 +3,9 @@
   <Content class="noPadding">
     <Header>
       <Menu mode="horizontal" :active-name="name" @on-select="select">
-        <!-- <div class="layout-logo">{{PageList.PageList.main}}</div> -->
+        <div class="layout-logo">{{List[0].name}}</div>
         <div class="layout-nav">
-          <MenuItem v-for="(item,index) in PageList" :to="{name:PageList.path,query:{id:index}}" :name="1">{{PageList.name}}
+          <MenuItem v-for="(item,index) in List" :to="{name:item.path,query:{id:index}}" :name="1">{{item.name}}
           </MenuItem>
         </div>
       </Menu>
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       name: 1,
-      // PageList:[]
+      List:[]
     }
   },
   methods: {
@@ -33,7 +33,7 @@ export default {
   },
   mounted() {
     console.log(PageList);
-    this.PageList = PageList
+    this.List = PageList
 
   }
 }

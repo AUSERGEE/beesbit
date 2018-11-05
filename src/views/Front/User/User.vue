@@ -11,8 +11,8 @@
             <p slot="title">
               登录注册
             </p>
-            <Tabs value="name1">
-              <TabPane label="标签一" name="name1">
+            <Tabs value="name1" :animated="false">
+              <TabPane label="登录" name="name1">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">
@@ -29,7 +29,7 @@
                   </FormItem>
                 </Form>
               </TabPane>
-              <TabPane label="标签二" name="name2">
+              <TabPane label="注册" name="name2">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">
@@ -46,7 +46,7 @@
                   </FormItem>
                 </Form>
               </TabPane>
-              <TabPane label="标签三" name="name3">
+              <TabPane label="登录" name="name3">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">

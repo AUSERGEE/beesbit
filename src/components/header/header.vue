@@ -2,10 +2,10 @@
 <section id="header">
   <Content class="noPadding">
     <Header>
-      <Menu mode="horizontal" :active-name="name" @on-select="select">
-        <div class="layout-logo">{{List[0].name}}</div>
+      <Menu mode="horizontal" active-name="1" @on-select="select">
+        <div class="layout-logo" @click="BackHome">币势得</div>
         <div class="layout-nav">
-          <MenuItem v-for="(item,index) in List" :to="{name:item.path,query:{id:index}}" :name="1">{{item.name}}
+          <MenuItem v-for="(item,index) in List" :to="{name:item.path,query:{id:index}}" :name="index">{{item.name}}
           </MenuItem>
         </div>
       </Menu>
@@ -18,23 +18,28 @@
 import {
   PageList
 } from '@/libs/nameList' //命名配置
+import {
+  F_BackHome
+} from '@/libs/tools'
 export default {
   data() {
     return {
       name: 1,
-      List:[]
+      List: []
     }
   },
   methods: {
     select(val) {
-      console.log(val);
       this.name = val
+      console.log(this.name);
+    },
+    BackHome(){
+      F_BackHome()
     }
   },
   mounted() {
     console.log(PageList);
     this.List = PageList
-
   }
 }
 </script>

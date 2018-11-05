@@ -1,4 +1,12 @@
 import Vue from 'vue'
+import Router from 'vue-router'
+Vue.use(Router)
+export const F_BackHome = () => {
+  this.$router.push({
+    name: '/',
+  })
+}
+
 export const forEach = (arr, fn) => {
   if (!arr.length || !fn) return
   let i = -1

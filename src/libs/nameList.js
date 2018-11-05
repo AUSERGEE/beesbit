@@ -1,9 +1,6 @@
 //全局命名配置
 
-export const PageList = [{ //页面路径
-    name: '币势得',
-    path: 'main',
-  },
+export const PageList = [
   {
     name: '首页',
     path: 'home',

@@ -12,6 +12,14 @@ const BASE_URL = process.env.NODE_ENV === 'production' ?
 
 
 module.exports = {
+  css: { // 配置css模块
+    loaderOptions: { // 向预处理器 Loader 传递配置选项
+      less: { // 配置less（其他样式解析用法一致）
+        javascriptEnabled: true // 设置为true
+      }
+    }
+  },
+
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))

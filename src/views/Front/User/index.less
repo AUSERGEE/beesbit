@@ -1,0 +1,27 @@
+@imgB: '../../../assets/background/';
+@imgI: '../../../assets/icon/';
+
+#introduce {
+  background-image: url("@{imgB}UserBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+  .contentPadding {
+    margin-top: 10vh;
+  }
+}
+
+/deep/.ivu-card-body {
+  padding: 2rem;
+
+  .ivu-input {
+    height: 40px;
+  }
+}
+
+/deep/.dv_handler {
+  height: 40px!important;
+  width: 40px!important;
+}

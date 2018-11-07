@@ -7,13 +7,18 @@
       <Content class="contentPadding">
         <Row type="flex" justify="center">
           <Col>
-          <img style="margin-bottom:2rem" src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
+          <img style="margin-bottom:2rem;width:20rem;" src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
           </Col>
         </Row>
         <Row type="flex" justify="center">
           <Col :xs="22" :sm="14" :md="14" :lg="10">
           <Card style="width:100%">
-            <Tabs value="name1" :animated="false">
+            <div class="head">
+              <div class="circle">
+                <img src="../../../assets/icon/UserHeadLogo.png" title="币势得">
+              </div>
+            </div>
+            <Tabs value="name2" :animated="false">
               <TabPane label="登录币势得" name="name1">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
@@ -46,17 +51,27 @@
               <TabPane label="注册币势得" name="name2">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="Username">
-                    <Icon type="ios-person-outline" slot="prepend"></Icon>
+                    <Input type="text" v-model="formInline.user" placeholder="输入真实姓名">
+                    </Input>
+                  </FormItem>
+                  <FormItem prop="user">
+                    <Input type="text" v-model="formInline.user" placeholder="输入手机号">
+                    </Input>
+                  </FormItem>
+                  <FormItem prop="user">
+                    <Input type="text" v-model="formInline.user" placeholder="输入验证码">
+                    </Input>
+                  </FormItem>
+                  <FormItem prop="user">
+                    <Input type="text" v-model="formInline.user" placeholder="输入密码">
                     </Input>
                   </FormItem>
                   <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="Password">
-                    <Icon type="ios-lock-outline" slot="prepend"></Icon>
+                    <Input type="password" v-model="formInline.password" placeholder="确认密码">
                     </Input>
                   </FormItem>
                   <FormItem>
-                    <Button type="primary" long>登录</Button>
+                    <Button type="primary" long disabled>登录</Button>
                   </FormItem>
                 </Form>
               </TabPane>
@@ -64,12 +79,22 @@
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">
-                    <Icon type="ios-person-outline" slot="prepend"></Icon>
+                    </Input>
+                  </FormItem>
+                  <FormItem>
+                    <drag-verify :width="width" :height="height" :text="text" :success-text="successText" :background="background" :progress-bar-bg="progressBarBg" :completed-bg="completedBg" :handler-bg="handlerBg" :handler-icon="handlerIcon" :text-size="textSize" :success-icon="successIcon"
+                      :circle="isCircle" @passcallback="haha"></drag-verify>
+                  </FormItem>
+                  <FormItem prop="password">
+                    <Input type="password" v-model="formInline.password" placeholder="Password">
                     </Input>
                   </FormItem>
                   <FormItem prop="password">
                     <Input type="password" v-model="formInline.password" placeholder="Password">
-                    <Icon type="ios-lock-outline" slot="prepend"></Icon>
+                    </Input>
+                  </FormItem>
+                  <FormItem prop="password">
+                    <Input type="password" v-model="formInline.password" placeholder="Password">
                     </Input>
                   </FormItem>
                   <FormItem>

@@ -1,4 +1,4 @@
-
+<!-- 登录&注册&找回密码 -->
 <template>
 <div class="layout">
   <!-- <Header></Header> -->
@@ -14,7 +14,7 @@
           <Col :xs="22" :sm="14" :md="14" :lg="10">
           <Card style="width:100%">
             <Tabs value="name1" :animated="false">
-              <TabPane label="登录" name="name1">
+              <TabPane label="登录币势得" name="name1">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="填写手机号">
@@ -29,15 +29,21 @@
                       :circle="isCircle" @passcallback="haha"></drag-verify>
                   </FormItem>
                   <FormItem>
-                    <Button type="primary" long>登录</Button>
+                    <Button ref="login" type="primary" long :disabled="loginDis">登录</Button>
                   </FormItem>
                   <FormItem>
-                    <span>下一次自动登录</span>
-                    <span>忘记密码</span>
+                    <Row type="flex" justify="space-between">
+                      <Col>
+                      <span><Checkbox v-model="autoLogin">下一次自动登录</Checkbox></span>
+                      </Col>
+                      <Col>
+                      <span>忘记密码?</span>
+                      </Col>
+                    </Row>
                   </FormItem>
                 </Form>
               </TabPane>
-              <TabPane label="注册" name="name2">
+              <TabPane label="注册币势得" name="name2">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">
@@ -54,7 +60,7 @@
                   </FormItem>
                 </Form>
               </TabPane>
-              <TabPane label="登录" name="name3">
+              <TabPane label="找回密码" name="name3">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
                     <Input type="text" v-model="formInline.user" placeholder="Username">
@@ -93,16 +99,16 @@ import {
 export default {
   data() {
     return {
-      handlerIcon: "fa fa-angle-double-right",
+      handlerIcon: "fa  fa-angle-double-right",
       successIcon: "fa fa-check",
-      background: "#c9c9c9",
+      background: "#e5e5e5",
       progressBarBg: "#e74c3c",
-      completedBg: "#66cc66",
+      completedBg: "#ff9085",
       handlerBg: "#fff",
       text: "请将滑块拖动到右侧",
       successText: "验证成功",
-      width: 350,
-      height: 40,
+      width: 0,
+      height: 44,
       textSize: "16px",
       isCircle: false,
       formInline: {
@@ -127,12 +133,14 @@ export default {
             trigger: 'blur'
           }
         ]
-      }
+      },
+      autoLogin: false,
+      loginDis: true,
     }
   },
   methods: {
     haha() {
-      alert("验证通过!")
+      this.loginDis = false
     }
   },
   components: {
@@ -141,7 +149,7 @@ export default {
     dragVerify,
   },
   mounted() {
-
+    this.width = this.$refs.login.$el.clientWidth
   }
 }
 </script>

@@ -9,6 +9,7 @@ import './registerServiceWorker'
 import 'swiper/dist/css/swiper.css'
 import 'iview/dist/styles/iview.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'font-awesome/css/font-awesome.css'
 import '../theme/index.less';
 import './index.less'
 

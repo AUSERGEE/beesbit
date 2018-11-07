@@ -7,7 +7,7 @@
       <Content class="contentPadding">
         <Row type="flex" justify="center">
           <Col>
-          <img style="margin-bottom:2rem;width:20rem;" src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
+          <img class="UserLogo"src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
           </Col>
         </Row>
         <Row type="flex" justify="center">
@@ -71,14 +71,14 @@
                     </Input>
                   </FormItem>
                   <FormItem>
-                    <Button type="primary" long disabled>登录</Button>
+                    <Button type="primary" long disabled>注册</Button>
                   </FormItem>
                 </Form>
               </TabPane>
               <TabPane label="找回密码" name="name3">
                 <Form ref="formInline" :model="formInline" :rules="ruleInline">
                   <FormItem prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="Username">
+                    <Input type="text" v-model="formInline.user" placeholder="输入手机号">
                     </Input>
                   </FormItem>
                   <FormItem>
@@ -86,19 +86,19 @@
                       :circle="isCircle" @passcallback="haha"></drag-verify>
                   </FormItem>
                   <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="Password">
+                    <Input type="password" v-model="formInline.password" placeholder="输入验证码">
                     </Input>
                   </FormItem>
                   <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="Password">
+                    <Input type="password" v-model="formInline.password" placeholder="输入新密码">
                     </Input>
                   </FormItem>
                   <FormItem prop="password">
-                    <Input type="password" v-model="formInline.password" placeholder="Password">
+                    <Input type="password" v-model="formInline.password" placeholder="确认新密码">
                     </Input>
                   </FormItem>
                   <FormItem>
-                    <Button type="primary" long>登录</Button>
+                    <Button type="primary" long disabled>重置密码</Button>
                   </FormItem>
                 </Form>
               </TabPane>
@@ -133,7 +133,7 @@ export default {
       text: "请将滑块拖动到右侧",
       successText: "验证成功",
       width: 0,
-      height: 44,
+      height: 40,
       textSize: "16px",
       isCircle: false,
       formInline: {

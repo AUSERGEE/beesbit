@@ -4,6 +4,9 @@
 .red {
   background: #e74c3c;
 }
+.ivu-form-item {
+  margin-bottom: 20px;
+}
 
 #introduce {
   background-image: url("@{imgB}UserBackground.png");
@@ -13,13 +16,20 @@
   height: 100vh;
 
   .contentPadding {
-    margin-top: 10vh;
+    padding: 2rem 0;
+    margin-top: 4%;
+
+    .UserLogo {
+      width: 20rem;
+      margin-bottom: 2rem;
+    }
 
     /deep/.ivu-card-body {
       overflow: hidden;
+      padding: 1rem 1rem 0 1rem;
 
       .head {
-        margin-top: -15vh;
+        margin-top: -8rem;
         margin-bottom: 5vh;
         display: flex;
         justify-content: center;
@@ -33,13 +43,13 @@
           border-radius: 50%;
 
           img {
-            position:absolute;
-            width: 8rem;
+            position: absolute;
+            width: 7rem;
             left: 0;
             right: 0;
             top: 6rem;
             bottom: 0;
-            margin:auto;
+            margin: auto;
           }
         }
       }
@@ -56,6 +66,16 @@
 }
 
 /deep/.dv_handler {
-  height: 44px!important;
-  width: 44px!important;
+  height: 40px!important;
+  width: 40px!important;
+}
+@media (max-width:520px) {
+  #introduce {
+    .contentPadding {
+      .UserLogo {
+        width: 14rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
 }

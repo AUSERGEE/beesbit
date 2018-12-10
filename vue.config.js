@@ -49,7 +49,8 @@ module.exports = {
   outputDir: 'beesbit',
   assetsDir: 'assest',
   pluginOptions: { // 第三方插件配置
+
   },
-  runtimeCompiler: true,
-  productionSourceMap: true,
+  // runtimeCompiler: true,
+  // productionSourceMap: true,
 }

@@ -7,7 +7,7 @@
       <Content class="contentPadding">
         <Row type="flex" justify="center">
           <Col>
-          <img class="UserLogo"src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
+          <img class="UserLogo" src="../../../assets/icon/UserLogo.png" alt="asd" title="币势得">
           </Col>
         </Row>
         <Row type="flex" justify="center">
@@ -30,16 +30,18 @@
                     </Input>
                   </FormItem>
                   <FormItem>
-                    <drag-verify :width="width" :height="height" :text="text" :success-text="successText" :background="background" :progress-bar-bg="progressBarBg" :completed-bg="completedBg" :handler-bg="handlerBg" :handler-icon="handlerIcon" :text-size="textSize" :success-icon="successIcon"
-                      :circle="isCircle" @passcallback="haha"></drag-verify>
+                    <drag-verify :width="width" :height="height" :text="text" :success-text="successText" :background="background" :progress-bar-bg="progressBarBg" :completed-bg="completedBg" :handler-bg="handlerBg" :handler-icon="handlerIcon"
+                      :text-size="textSize" :success-icon="successIcon" :circle="isCircle" @passcallback="haha"></drag-verify>
                   </FormItem>
                   <FormItem>
-                    <Button ref="login" type="primary" long :disabled="loginDis">登录</Button>
+                    <Button ref="login" type="primary" long :disabled="loginDis" @click="link">登录</Button>
                   </FormItem>
                   <FormItem>
                     <Row type="flex" justify="space-between">
                       <Col>
-                      <span><Checkbox v-model="autoLogin">下一次自动登录</Checkbox></span>
+                      <span>
+                        <Checkbox v-model="autoLogin">下一次自动登录</Checkbox>
+                      </span>
                       </Col>
                       <Col>
                       <span>忘记密码?</span>
@@ -82,8 +84,8 @@
                     </Input>
                   </FormItem>
                   <FormItem>
-                    <drag-verify :width="width" :height="height" :text="text" :success-text="successText" :background="background" :progress-bar-bg="progressBarBg" :completed-bg="completedBg" :handler-bg="handlerBg" :handler-icon="handlerIcon" :text-size="textSize" :success-icon="successIcon"
-                      :circle="isCircle" @passcallback="haha"></drag-verify>
+                    <drag-verify :width="width" :height="height" :text="text" :success-text="successText" :background="background" :progress-bar-bg="progressBarBg" :completed-bg="completedBg" :handler-bg="handlerBg" :handler-icon="handlerIcon"
+                      :text-size="textSize" :success-icon="successIcon" :circle="isCircle" @passcallback="haha"></drag-verify>
                   </FormItem>
                   <FormItem prop="password">
                     <Input type="password" v-model="formInline.password" placeholder="输入验证码">
@@ -166,6 +168,11 @@ export default {
   methods: {
     haha() {
       this.loginDis = false
+    },
+    link() {
+      this.$router.push({
+        name: 'account',
+      })
     }
   },
   components: {

@@ -1,16 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+//展示页面
 const home = r => require.ensure([], () => r(require('./views/front/home/home.vue')), 'home')
 const about = r => require.ensure([], () => r(require('./views/front/about/about.vue')), 'about')
 const guide = r => require.ensure([], () => r(require('./views/front/guide/guide.vue')), 'guide')
 const help = r => require.ensure([], () => r(require('./views/front/help/help.vue')), 'help')
 const notice = r => require.ensure([], () => r(require('./views/front/notice/notice.vue')), 'notice')
 const user = r => require.ensure([], () => r(require('./views/front/user/user.vue')), 'user')
+//个人中心页面
+const account = r => require.ensure([], () => r(require('./views/center/account/account.vue')), 'account')
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [{
+      path: '/account',
+      name: 'account',
+      component: account,
+      meta: {
+        title: '账户信息'
+      }
+    },
+    {
       path: '/',
       name: 'home',
       component: home,
@@ -60,11 +71,7 @@ const router = new Router({
     },
     {
       path: '*',
-      name: 'home',
-      component: home,
-      meta: {
-        title: '币势得云算力'
-      }
+      redirect: '/'
     },
   ]
 })

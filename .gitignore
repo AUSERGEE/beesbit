@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/beesbit
+/theme
 
 # local env files
 .env.local

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const home = r => require.ensure([], () => r(require('./views/Front/Home/Home.vue')), 'home')
-const about = r => require.ensure([], () => r(require('./views/Front/About/About.vue')), 'about')
-const guide = r => require.ensure([], () => r(require('./views/Front/Guide/Guide.vue')), 'guide')
-const help = r => require.ensure([], () => r(require('./views/Front/Help/Help.vue')), 'help')
-const notice = r => require.ensure([], () => r(require('./views/Front/Notice/Notice.vue')), 'notice')
-const user = r => require.ensure([], () => r(require('./views/Front/User/User.vue')), 'user')
+const home = r => require.ensure([], () => r(require('./views/front/home/home.vue')), 'home')
+const about = r => require.ensure([], () => r(require('./views/front/about/about.vue')), 'about')
+const guide = r => require.ensure([], () => r(require('./views/front/guide/guide.vue')), 'guide')
+const help = r => require.ensure([], () => r(require('./views/front/help/help.vue')), 'help')
+const notice = r => require.ensure([], () => r(require('./views/front/notice/notice.vue')), 'notice')
+const user = r => require.ensure([], () => r(require('./views/front/user/user.vue')), 'user')
 
 Vue.use(Router)
 
@@ -56,6 +56,14 @@ const router = new Router({
       component: user,
       meta: {
         title: '登录/注册-币势得'
+      }
+    },
+    {
+      path: '*',
+      name: 'home',
+      component: home,
+      meta: {
+        title: '币势得云算力'
       }
     },
   ]

@@ -1,9 +1,10 @@
 <template>
 <div class="layout">
   <Layout class="main">
-    <Layout>我的收益
+    <Headbar></Headbar>
+    <Layout>账户信息
     </Layout>
-    <Layout>2
+    <Layout>1
     </Layout>
   </Layout>
 </div>

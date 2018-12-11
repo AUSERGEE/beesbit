@@ -19,7 +19,35 @@
       .ivu-layout:not(.main) {
         border-radius: 5px;
         background: white;
+        margin-bottom: 1rem;
 
+        .order {
+          width: 100%;
+
+          /deep/.ivu-card-body {
+            display: flex;
+            width: 100%;
+            padding: 0;
+            flex-direction: column;
+            position: relative;
+            border-radius: 15px;
+
+            .time {
+              display: flex;
+              justify-content: space-between;
+              padding: 1rem;
+              background: #EDBF6F;
+              color: white;
+            }
+
+            .power {
+              display: flex;
+              justify-content: space-between;
+              padding: 1rem;
+              flex-direction: row;
+            }
+          }
+        }
       }
     }
   }

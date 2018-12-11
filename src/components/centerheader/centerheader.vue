@@ -3,10 +3,30 @@
   <Content class="noPadding">
     <Header>
       <Menu mode="horizontal" active-name="1" @on-select="select">
-        <div class="layout-logo" @click="BackHome">币势得</div>
+        <div class="layout-logo" @click="BackHome">
+          <img src="../../assets/icons/logo.svg" width="100%">
+
+        </div>
         <div class="layout-nav">
-          <MenuItem v-for="(item,index) in List" :to="{name:item.path,query:{id:index}}" :name="index">{{item.name}}
+          <MenuItem name="1">
+          <Icon type="ios-paper" />
           </MenuItem>
+          <MenuItem name="2">
+          <Icon type="ios-people" />
+          </MenuItem>
+          <MenuItem name="4">
+          <Icon type="md-person" />
+          </MenuItem>
+          <Submenu name="3">
+            <template slot="title">
+              <Icon type="md-chatbubbles" />
+            </template>
+            <MenuGroup title="使用">
+              <MenuItem name="3-1">修改密码</MenuItem>
+              <MenuItem name="3-2">绑定邮箱</MenuItem>
+              <MenuItem name="3-3">退出</MenuItem>
+            </MenuGroup>
+          </Submenu>
         </div>
       </Menu>
     </Header>
@@ -33,7 +53,7 @@ export default {
       this.name = val
       console.log(this.name);
     },
-    BackHome(){
+    BackHome() {
       F_BackHome()
     }
   },

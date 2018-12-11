@@ -1,0 +1,64 @@
+.ivu-layout-header {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+
+  .limit {
+    height: 100%;
+
+    .ivu-row-flex {
+      align-items: center;
+      height: 100%;
+
+      .ivu-col {
+        .img {
+          width: 4rem;
+          height: 4rem;
+          margin: 0 0.5rem;
+          background: #F3F3F3;
+          border-radius: 50%;
+
+          img {
+            width: 1.4rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .head {
+      background: #F3F3F3;
+      border-radius: 50%;
+      height: 4rem;
+      width: 4rem;
+    }
+
+    .msg {
+      p {
+        font-size: 14px;
+        line-height: 1rem;
+        margin: 0.5rem 0 0 1.5rem;
+      }
+
+      p:first-of-type {
+        font-weight: 900;
+      }
+
+      .ivu-rate {
+        vertical-align: bottom;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

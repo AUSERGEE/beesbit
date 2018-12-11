@@ -18,7 +18,7 @@ const router = new Router({
       name: 'account',
       component: account,
       meta: {
-        title: '账户信息'
+        title: '账户信息-币势得'
       }
     },
     {

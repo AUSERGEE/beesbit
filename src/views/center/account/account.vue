@@ -2,13 +2,21 @@
 <div class="layout">
   <Centerheader></Centerheader>
   <Layout :style="{padding: '0 50px',marginTop: '1rem',}">
-    <Content :style="{padding: '24px 0',minHeight: '280px'}">
+    <Content :style="{padding: '24px 0',minHeight: '80vh'}">
       <Layout>
-        <Sider hide-trigger :style="{background: 'transparent'}">
-          <div class="">
-            123
-          </div>
-          <Menu active-name="1" :open-names="['1']" width="auto" style="marginRight:1rem;" @on-select="select">
+        <Sider hide-trigger :style="{background: 'transparent',minWidth:'250px'}">
+          <Menu width="auto">
+            <div class="title">
+              <div class="head">
+                <img src="../../../assets/icons/head.svg" width="40%">
+              </div>
+              <div class="msg">
+                <p>{{username}}</p>
+                <p>{{usertelphone}}</p>
+              </div>
+            </div>
+          </Menu>
+          <Menu active-name="1" :open-names="['1']" width="auto" @on-select="select">
             <MenuItem name="1">
             <Icon type="md-heart" />账户信息</MenuItem>
             <MenuItem name="2">
@@ -21,13 +29,13 @@
             <Icon type="md-heart" />合作计划</MenuItem>
           </Menu>
         </Sider>
-        <Layout>
-          <Content width="auto" :style="{padding: '24px', minHeight: '80px', background: '#fff'}">
-            {{name}}
-          </Content>
-          <Content width="auto" :style="{padding: '24px', minHeight: '200px', background: '#fff'}">
-            {{name}}
-          </Content>
+        <Layout class="main">
+          <!-- 公共的状态栏 -->
+          <Headbar></Headbar>
+          <Layout>1
+          </Layout>
+          <Layout>1
+          </Layout>
         </Layout>
       </Layout>
     </Content>
@@ -37,6 +45,7 @@
 </template>
 <script>
 import Centerheader from '#/centerheader'
+import Headbar from '#/headbar'
 import {
   swiper,
   swiperSlide
@@ -46,6 +55,8 @@ export default {
     return {
       modal: false,
       name: 1,
+      username: this.$store.state.username,
+      usertelphone: this.$store.state.usertelphone,
       swiperOption: {
         centeredSlides: true,
         autoplay: {
@@ -74,11 +85,15 @@ export default {
     }
   },
   components: {
-    Centerheader,
+    Centerheader, //个人中心导航栏
+    Headbar, //个人中心用户状态栏
     swiper,
     swiperSlide
   },
-  mounted() {}
+  mounted() {},
+  beforeUpdate() {
+    // this.$store.commit('changeusername', 'zhangguo');
+  },
 }
 </script>
 

@@ -7,7 +7,6 @@
 
 .layout {
   background: #f5f7f9;
-  height: 100vh;
 
   .ivu-layout {
     background: transparent;
@@ -15,10 +14,12 @@
     .main {
       margin-left: 1rem;
       height: 80vh;
+      position: relative;
 
-      .ivu-layout {
-        background: white;
+      .ivu-layout:not(.main) {
         border-radius: 5px;
+        background: white;
+
       }
     }
   }

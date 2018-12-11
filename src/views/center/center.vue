@@ -18,20 +18,24 @@
           </Menu>
           <Menu active-name="1" :open-names="['1']" width="auto" @on-select="select">
             <MenuItem name="1" to="/center/account">
-            <Icon type="md-heart"/>账户信息</MenuItem>
+            <Icon type="md-heart" />账户信息</MenuItem>
             <MenuItem name="2" to="/center/earning">
-            <Icon type="md-heart"/>我的收益</MenuItem>
+            <Icon type="md-heart" />我的收益</MenuItem>
             <MenuItem name="3" to="/center/store">
-            <Icon type="md-heart"/>购买算力</MenuItem>
+            <Icon type="md-heart" />购买算力</MenuItem>
             <MenuItem name="4" to="/center/order">
-            <Icon type="md-heart"/>订单详情</MenuItem>
+            <Icon type="md-heart" />订单详情</MenuItem>
             <MenuItem name="5" to="/center/partner">
-            <Icon type="md-heart"/>合作计划</MenuItem>
+            <Icon type="md-heart" />合作计划</MenuItem>
           </Menu>
         </Sider>
         <!-- 内容显示区域 -->
         <Layout class="main">
-          <router-view></router-view>
+
+          <transition :name="transitionName">
+            <router-view class="child-view"></router-view>
+          </transition>
+
         </Layout>
       </Layout>
     </Content>
@@ -48,6 +52,7 @@ export default {
       name: 1,
       username: this.$store.state.username,
       usertelphone: this.$store.state.usertelphone,
+      transitionName: 'slide-left'
     }
   },
   methods: {
@@ -63,6 +68,15 @@ export default {
   components: {
     Centerheader, //个人中心导航栏
     Headbar, //个人中心用户状态栏
+  },
+  watch: {
+    '$route'(to, from) {
+      if (to.path == '/') {
+        this.transitionName = 'slide-right';
+      } else {
+        this.transitionName = 'slide-left';
+      }
+    }
   },
   mounted() {},
   beforeUpdate() {

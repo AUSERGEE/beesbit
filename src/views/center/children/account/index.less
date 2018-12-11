@@ -35,16 +35,54 @@
             .time {
               display: flex;
               justify-content: space-between;
-              padding: 1rem;
-              background: #EDBF6F;
+              align-items: center;
+              padding: 0.5rem 1rem;
+              background: linear-gradient(-61deg,rgba(237,153,83,1),rgba(237,191,111,1));
+              opacity: 0.5;
               color: white;
+
+              .img {
+                width: 2rem;
+                height: 2rem;
+              }
+
+              .left {
+                p {
+                  text-align: center;
+                  font-size: 14px;
+                }
+              }
+
+              .right {
+                p {
+                  text-align: center;
+                  font-size: 14px;
+                }
+              }
             }
 
             .power {
               display: flex;
               justify-content: space-between;
-              padding: 1rem;
+              padding: 2rem 1rem 1rem 1rem;
               flex-direction: row;
+              align-items: flex-end;
+
+              .eth {
+                color: #636363;
+                font-weight: 600;
+                font-size: 1.5rem;
+              }
+
+              .price {
+                display: flex;
+    align-items: baseline;
+                .num {
+                  color: #636363;
+                  font-weight: 600;
+                  font-size: 1.5rem;
+                }
+              }
             }
           }
         }

@@ -3,18 +3,18 @@
   <Layout class="main">
     <Headbar></Headbar>
     <Layout>
-      <Tabs :animated="false">
+      <Tabs>
         <TabPane label="我的算力套餐" style="padding:0 1rem;">
           <Row type="flex" :gutter="16">
             <Col span="8" v-for="item in 3">
-            <Card class="order">
+            <Card class="order" dis-hover>
               <div class="time">
                 <div class="left">
                   <p>2018.9.21 10:16</p>
                   <p>套餐开始时间</p>
                 </div>
-                <div class="">
-                  <img src="" alt="">
+                <div class="img">
+                  <img src="../../../../assets/icons/account/eth.svg" width="100%">
                 </div>
                 <div class="left">
                   <p>2018.9.21 10:16</p>
@@ -25,11 +25,11 @@
                 <div class="eth">
                   ETH
                 </div>
-                <div class="">
-                  <div class="">
+                <div class="price">
+                  <div class="text">
                     总算力（MH/s）
                   </div>
-                  <div class="">
+                  <div class="num">
                     255
                   </div>
                 </div>
@@ -41,14 +41,13 @@
         <TabPane label="我的优惠券" style="padding:0 1rem;">
           <Row type="flex" :gutter="16">
             <Col span="8" v-for="item in 3">
-            <Card class="order">
+            <Card class="order" dis-hover>
               <div class="time">
                 <div class="left">
                   <p>2018.9.21 10:16</p>
                   <p>套餐开始时间</p>
                 </div>
                 <div class="">
-                  <img src="" alt="">
                 </div>
                 <div class="left">
                   <p>2018.9.21 10:16</p>
@@ -75,7 +74,7 @@
       </Tabs>
     </Layout>
     <Layout>
-      <Tabs :animated="false">
+      <Tabs>
         <TabPane label="提现记录" style="padding:0 1rem;">
           <Table highlight-row ref="currentRowTable" :columns="columns3" :data="data1"></Table>
         </TabPane>

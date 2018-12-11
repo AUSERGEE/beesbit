@@ -8,18 +8,44 @@ const help = r => require.ensure([], () => r(require('./views/front/help/help.vu
 const notice = r => require.ensure([], () => r(require('./views/front/notice/notice.vue')), 'notice')
 const user = r => require.ensure([], () => r(require('./views/front/user/user.vue')), 'user')
 //个人中心页面
-const account = r => require.ensure([], () => r(require('./views/center/account/account.vue')), 'account')
+const center = r => require.ensure([], () => r(require('./views/center/center.vue')), 'center')
+const account = r => require.ensure([], () => r(require('./views/center/children/account/account.vue')), 'account')
+const earning = r => require.ensure([], () => r(require('./views/center/children/earning/earning.vue')), 'earning')
+const order = r => require.ensure([], () => r(require('./views/center/children/order/order.vue')), 'order')
+const partner = r => require.ensure([], () => r(require('./views/center/children/partner/partner.vue')), 'partner')
+const store = r => require.ensure([], () => r(require('./views/center/children/store/store.vue')), 'store')
 
 Vue.use(Router)
 
 const router = new Router({
   routes: [{
-      path: '/account',
-      name: 'account',
-      component: account,
+      path: '/center',
+      name: 'center',
+      component: center,
       meta: {
         title: '账户信息-币势得'
-      }
+      },
+      children: [{ //账户信息
+        path: 'account',
+        name: 'account',
+        component: account
+      }, { //我的收益
+        path: 'earning',
+        name: 'earning',
+        component: earning
+      },{ //我的收益
+        path: 'order',
+        name: 'order',
+        component: order
+      }, { //我的收益
+        path: 'partner',
+        name: 'partner',
+        component: partner
+      }, { //我的收益
+        path: 'store',
+        name: 'store',
+        component: store
+      },  ]
     },
     {
       path: '/',

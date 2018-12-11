@@ -171,7 +171,7 @@ export default {
     },
     link() {
       this.$router.push({
-        name: 'account',
+        name: 'center',
       })
     }
   },

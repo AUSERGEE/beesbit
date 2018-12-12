@@ -8,12 +8,14 @@
 }
 //公共css方法
 //padding为0
+
 h3 {
   line-height: 44px;
   margin-bottom: 2rem;
   font-size: 32px;
   color: #666;
 }
+
 img {
   vertical-align: middle;
 }
@@ -35,9 +37,9 @@ img {
   padding: 0 15px;
   margin: 0 auto;
 
-   p {
+  p {
     font-size: 1rem;
-    margin: 1rem 0;
+    margin: .2rem 0;
     text-align: left;
   }
 }
@@ -46,8 +48,41 @@ img {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+// 滚动条
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
+::-webkit-scrollbar-track-piece {
+  background-color: #ebebeb;
+}
+
+::-webkit-scrollbar-thumb {
+  transition: background-color 0.5s;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  transition: background-color 0.5s;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  transition: background-color 0.5s;
+  height: 32px;
+  background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 32px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+/* for Chrome */
+// 滚动条
 @media (min-width:540px) {
   .ivu-layout-content {
     width: 480px;

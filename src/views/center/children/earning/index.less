@@ -1,10 +1,6 @@
 // /deep/
 // less的深度作用域
 
-.ivu-tabs-nav {
-  background: red;
-}
-
 .layout {
   background: #f5f7f9;
 
@@ -14,10 +10,46 @@
     .main {
       margin-left: 1rem;
       height: 80vh;
+      position: relative;
 
-      .ivu-layout {
-        background: white;
+      .ivu-layout:not(.main) {
         border-radius: 5px;
+        background: white;
+        margin-bottom: 1rem;
+
+        .earningbox {
+          display: flex;
+          margin: 1rem;
+          justify-content: space-between;
+
+          .earnings {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 12rem;
+            height: 10rem;
+            box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.05);
+
+            .img {
+              width: 2.5rem;
+              height: 2.5rem;
+              margin-bottom: 1rem;
+            }
+
+            p {
+              text-align: center;
+            }
+
+            p:first-of-type {
+              font-weight: 600;
+              font-size: 1.2rem;
+            }
+
+            p:last-of-type {
+            }
+          }
+        }
       }
     }
   }
@@ -28,37 +60,7 @@
     .ivu-menu-item {
       padding: 20px 24px;
     }
-
-    .title {
-      padding: 1.5rem 1rem;
-      display: flex;
-      align-items: center;
-
-      .head {
-        background: #F3F3F3;
-        border-radius: 50%;
-        height: 4rem;
-        width: 4rem;
-        line-height: 4rem;
-        margin: 0 0 0 1rem;
-      }
-
-      .msg {
-        p {
-          margin: 0.22rem 0 0 1.5rem;
-          font-size: 14px;
-        }
-
-        p:first-of-type {
-          font-weight: 900;
-        }
-      }
-    }
   }
-}
-
-.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
-  left: 0;
 }
 
 .ivu-menu-vertical.ivu-menu-light:after {

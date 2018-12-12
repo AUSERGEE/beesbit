@@ -15,15 +15,19 @@
           </div>
         </TabPane>
         <TabPane label="余额提现" name="name2">
-          <div class="earningbox">
-            <div class="earnings" v-for="(item,index) in earning">
-              <div class="img">
-                <img src="" width="100%">
-              </div>
-              <p>{{item.value}}</p>
-              <p>{{item.text}}</p>
-            </div>
-          </div>
+          <Row type="flex" justify="space-between">
+            <Col span="8">
+            123
+            </Col>
+            <Col span="8">
+            <Input placeholder="Enter something..." clearable style="width: 200px" />
+            <Input placeholder="Enter something..." clearable style="width: 200px" />
+            <Input placeholder="Enter something..." clearable style="width: 200px" />
+            </Col>
+            <Col span="8">
+            123
+            </Col>
+          </Row>
         </TabPane>
       </Tabs>
     </Layout>

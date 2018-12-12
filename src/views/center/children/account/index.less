@@ -42,8 +42,13 @@
               color: white;
 
               .img {
-                width: 2rem;
-                height: 2rem;
+                width: 3rem;
+                height: 3rem;
+
+                img {
+                  width: 3rem;
+                  height: 3rem;
+                }
               }
 
               .left {
@@ -64,27 +69,72 @@
             .power {
               display: flex;
               justify-content: space-between;
-              padding: 2rem 1rem 1rem 1rem;
+              padding: 2rem 2rem 1rem;
               flex-direction: row;
               align-items: flex-end;
 
               .eth {
                 color: #636363;
-                font-weight: 600;
+                font-weight: 100;
                 font-size: 1.5rem;
               }
 
               .price {
                 display: flex;
-    align-items: baseline;
+                align-items: baseline;
+
                 .num {
                   color: #636363;
-                  font-weight: 600;
-                  font-size: 1.5rem;
+                  font-weight: 100;
+                  font-size: 2rem;
                 }
               }
             }
           }
+        }
+
+        .coupon {
+          color: white;
+          display: flex;
+          justify-content: center;
+          background: url("../../../../assets/icons/account/eth.svg");
+
+          h6 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 100;
+          }
+
+          .btn {
+            margin: 1rem 0;
+          }
+
+          .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left {
+              p {
+                margin: 0.2rem 0;
+                font-size: 14px;
+              }
+            }
+
+            .right {
+              font-weight: 100;
+              font-size: 1.8rem;
+              margin-left: 2rem;
+            }
+          }
+        }
+
+        .day {
+          background: linear-gradient(-61deg,rgba(255,106,94,1),rgba(255,223,212,1));
+        }
+
+        .discount {
+          background: linear-gradient(-61deg,rgba(38,151,242,1),rgba(233,245,255,1));
         }
       }
     }
@@ -123,6 +173,30 @@
       }
     }
   }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {

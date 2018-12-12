@@ -70,7 +70,7 @@ export default {
     Headbar, //个人中心用户状态栏
   },
   watch: {
-    '$route'(to, from) {
+    '$route' (to, from) {
       if (to.path == '/') {
         this.transitionName = 'slide-right';
       } else {
@@ -78,7 +78,11 @@ export default {
       }
     }
   },
-  mounted() {},
+  mounted() {
+    this.$router.push({
+      path: '/center/account'
+    })
+  },
   beforeUpdate() {
     // this.$store.commit('changeusername', 'zhangguo');
   },

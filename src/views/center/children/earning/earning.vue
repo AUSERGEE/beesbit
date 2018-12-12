@@ -15,9 +15,16 @@
           </div>
         </TabPane>
         <TabPane label="余额提现" name="name2">
-          <Row type="flex" justify="space-between">
+          <Row type="flex" justify="space-between" style="padding:0 1rem;">
             <Col span="8">
-            123
+            <Alert type="warning">
+              <template slot="desc">
+                  注意：<br>
+                  1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
+                  2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
+                  3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
+              </template>
+            </Alert>
             </Col>
             <Col span="8">
             <Input placeholder="Enter something..." clearable style="width: 200px" />
@@ -25,13 +32,16 @@
             <Input placeholder="Enter something..." clearable style="width: 200px" />
             </Col>
             <Col span="8">
-            123
+            <div class="">
+              <h1>asdasd</h1>
+            </div>
             </Col>
           </Row>
         </TabPane>
       </Tabs>
     </Layout>
-    <Layout>1
+    <Layout>
+
     </Layout>
   </Layout>
 </div>

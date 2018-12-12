@@ -72,7 +72,7 @@
     <Layout>
       <Tabs>
         <TabPane label="提现记录" style="padding:0 1rem;">
-          <Table highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
+          <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
           <div style="margin: 10px;overflow: hidden">
             <div style="float: right;">
               <Page :total="100" :current="1" size="small" show-sizer></Page>
@@ -80,7 +80,7 @@
           </div>
         </TabPane>
         <TabPane label="登录记录" style="padding:0 1rem;">
-          <Table highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
+          <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
           <div style="margin: 10px;overflow: hidden">
             <div style="float: right;">
               <Page :total="100" :current="1" size="small" show-sizer></Page>

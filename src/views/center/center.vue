@@ -31,11 +31,7 @@
         </Sider>
         <!-- 内容显示区域 -->
         <Layout class="main">
-
-          <transition :name="transitionName">
-            <router-view class="child-view"></router-view>
-          </transition>
-
+            <router-view></router-view>
         </Layout>
       </Layout>
     </Content>

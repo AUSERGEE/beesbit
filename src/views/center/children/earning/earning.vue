@@ -1,5 +1,5 @@
 <template>
-<div class="content">
+<div class="layout">
   <Layout>
     <Tabs value="name1" :animated="false">
       <TabPane label="收益概况" name="name1">

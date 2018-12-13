@@ -46,7 +46,90 @@
               </div>
             </div>
             </Col>
-            <Col span="12">1</Col>
+            <Col span="12">
+            <div class="form">
+              <div class="select">
+                <Row type="flex" :gutter="15">
+                  <Col span="12">
+                  <label>币种</label>
+                  <Select v-model="model">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                  </Col>
+                  <Col span="12">
+                  <label>付款币种</label>
+                  <Select v-model="model">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                  </Col>
+                </Row>
+                <Row type="flex" :gutter="15">
+                  <Col span="16">
+                  <label>币势得算力</label>
+                  <Input></Input>
+                  </Col>
+                  <Col span="8">
+                  <label>币势得算力</label>
+                  <div class="">
+                    <InputNumber :max="10" :min="1" v-model="number"></InputNumber>
+                  </div>
+                  </Col>
+                </Row>
+                <Row type="flex" :gutter="15">
+                  <Col span="12">
+                  <label>付款方式</label>
+                  <Select v-model="model">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                  </Col>
+                  <Col span="12">
+                  <label>租凭算力天数</label>
+                  <Select v-model="model">
+                    <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                  </Col>
+                </Row>
+              </div>
+              <div class="discounts">
+                <Tabs value="1">
+                  <TabPane label="优惠卷" name="1">
+                    <Row type="flex" justify="space-between">
+                      <Col span="6"  v-for="item in 4">
+                      <Card :bordered="false" style="width:6rem">
+                        <p slot="title">Borderless card</p>
+                        <p>Content of card</p>
+                      </Card>
+                      </Col>
+                    </Row>
+                  </TabPane>
+                  <TabPane label="ETH余额抵扣" name="2">标签二的内容</TabPane>
+                </Tabs>
+              </div>
+              <div class="protocol">
+                <div class="img">
+                  <img src="../../../../assets/icons/store/protocol.svg" width="100%">
+                </div>
+                <div class="btn">
+                  <p>算力协议</p>
+                  <div class="">
+                    <Button type="default">请阅读算力协议</Button>
+                  </div>
+                </div>
+              </div>
+              <div class="submit">
+                <div style="width:100%;">
+                  <Row type="flex" justify="space-between">
+                    <Col span="12">
+                    <h1>1234元</h1>
+                    </Col>
+                    <Col span="12">
+                    <Button type="error" long>同意算力协议后进行订单确认</Button>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            </div>
+            </Col>
           </Row>
         </div>
       </TabPane>
@@ -84,6 +167,21 @@ export default {
           prevEl: '.swiper-button-prev'
         }
       },
+      cityList: [{
+          value: '1',
+          label: '1'
+        },
+        {
+          value: '2',
+          label: '2'
+        },
+        {
+          value: '3',
+          label: '3'
+        },
+      ],
+      model: '1',
+      number: 0,
     }
   },
   methods: {},

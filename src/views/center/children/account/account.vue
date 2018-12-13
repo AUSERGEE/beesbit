@@ -43,7 +43,7 @@
         </TabPane>
         <TabPane label="我的优惠券" style="padding:0 1rem;" name="name2">
           <Row type="flex">
-            <swiper :options="swiperOption" ref="mySwiper">
+            <swiper :options="swiperOption1" ref="mySwiper">
               <swiper-slide v-for="(item,index) in coupon">
                 <Col span="24">
                 <Card class="coupon" :class="item.type=='day'?'day':'discount'" dis-hover>
@@ -110,6 +110,23 @@ export default {
       username: this.$store.state.username,
       usertelphone: this.$store.state.usertelphone,
       swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+        freeMode: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      swiperOption1: {
         slidesPerView: 3,
         spaceBetween: 5,
         freeMode: true,

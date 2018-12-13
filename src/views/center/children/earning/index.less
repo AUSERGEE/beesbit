@@ -45,7 +45,45 @@
               font-size: 1.2rem;
             }
 
-            p:last-of-type {
+            p:last-of-type {}
+          }
+        }
+
+        .withdraw {
+          .warning {
+            /deep/span.ivu-alert-desc {
+              color: #FFA86E;
+              font-size: 12px;
+            }
+          }
+
+          .input {
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+
+          .balance {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .explain {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              img {
+                width: 1.5rem;
+                height: 1.5rem;
+              }
+            }
+
+            h1 {
+              color: #EB5648;
+              font-size: 2rem;
+              font-weight: 100;
+              margin: 1rem 0;
             }
           }
         }

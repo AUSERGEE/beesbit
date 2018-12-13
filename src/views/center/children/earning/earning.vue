@@ -15,9 +15,9 @@
           </div>
         </TabPane>
         <TabPane label="余额提现" name="name2">
-          <Row type="flex" justify="space-between" style="padding:0 1rem;">
+          <Row class="withdraw" type="flex" justify="space-between" style="padding:0 1rem;">
             <Col span="8">
-            <Alert type="warning">
+            <Alert class="warning" type="warning">
               <template slot="desc">
                 注意：<br>
                 1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
@@ -26,14 +26,19 @@
               </template>
             </Alert>
             </Col>
-            <Col span="8">
-            <Input placeholder="Enter something..." clearable style="width: 200px" />
-            <Input placeholder="Enter something..." clearable style="width: 200px" />
-            <Input placeholder="Enter something..." clearable style="width: 200px" />
+            <Col class="input" span="8">
+            <Input placeholder="请输入钱包地址" size="large" clearable style="marginBottom:1rem;" />
+            <Input placeholder="请输入提现额度" size="large" clearable style="marginBottom:1rem;" />
+            <Input placeholder="请输入提现密码" size="large" clearable />
             </Col>
             <Col span="8">
-            <div class="">
-              <h1>asdasd</h1>
+            <div class="balance">
+              <div class="explain">
+                <span>可提现余额</span>
+                <img src="../../../../assets/icons/earning/explain.svg">
+              </div>
+              <h1>1,23165516</h1>
+              <Button type="error" long>我要提现</Button>
             </div>
             </Col>
           </Row>
@@ -148,6 +153,15 @@ export default {
           realtime: true,
           start: 30,
           end: 70,
+          handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+          handleSize: '80%',
+          handleStyle: {
+            color: '#fff',
+            shadowBlur: 2,
+            shadowColor: 'rgba(0, 0, 0, 0.6)',
+            shadowOffsetX: 2,
+            shadowOffsetY: 2
+          },
         }, ],
       });
     }

@@ -3,7 +3,7 @@
   <div class="limit">
     <Row type="flex">
       <Col v-for="(item,index) in list" :key="index">
-        <Tooltip :content="index" theme="light" placement="left">
+        <Tooltip :content="index" theme="light" placement="top">
           <div class="img">
             <img :src="item.img" width="60%">
           </div>

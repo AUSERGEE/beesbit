@@ -4,18 +4,16 @@
 .layout {
   background: #f5f7f9;
 
-  .ivu-layout {
-    background: transparent;
+  .content {
+    position: relative;
 
-    .main {
-      margin-left: 1rem;
-      position: relative;
+    .ivu-layout:not(.content) {
+      border-radius: 5px;
+      background: white;
+      margin-bottom: 1rem;
 
-      .ivu-layout:not(.main) {
-        border-radius: 5px;
-        background: white;
-        margin-bottom: 1rem;
-
+      .ivu-tabs {
+        overflow: inherit;
         .earningbox {
           display: flex;
           margin: 1rem;
@@ -68,6 +66,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+
             .explain {
               display: flex;
               justify-content: space-between;

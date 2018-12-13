@@ -1,38 +1,62 @@
 <template>
 <div class="layout">
-  <Layout class="main">
-    <Headbar></Headbar>
-    <Layout>
-      <Tabs value="name1">
-        <TabPane label="我的算力套餐" style="padding:0 1rem;" name="name1">
-          <swiper :options="swiperOption" ref="mySwiper">
-            <swiper-slide v-for="item in 4">
-              <Col span="24">
-              <Card class="order" dis-hover>
-                <div class="time">
-                  <div class="left">
-                    <p>2018.9.21 10:16</p>
-                    <p>套餐开始时间</p>
+  <Headbar></Headbar>
+  <Layout>
+    <Tabs value="name1">
+      <TabPane label="我的算力套餐" style="padding:0 1rem;" name="name1">
+        <swiper :options="swiperOption" ref="mySwiper">
+          <swiper-slide v-for="item in 4">
+            <Col span="24">
+            <Card class="order" dis-hover>
+              <div class="time">
+                <div class="left">
+                  <p>2018.9.21 10:16</p>
+                  <p>套餐开始时间</p>
+                </div>
+                <div class="img">
+                  <img src="../../../../assets/icons/account/eth.svg" width="100%">
+                </div>
+                <div class="left">
+                  <p>2018.9.21 10:16</p>
+                  <p>套餐结束时间</p>
+                </div>
+              </div>
+              <div class="power">
+                <div class="eth">
+                  ETH
+                </div>
+                <div class="price">
+                  <div class="text">
+                    总算力（MH/s）
                   </div>
-                  <div class="img">
-                    <img src="../../../../assets/icons/account/eth.svg" width="100%">
-                  </div>
-                  <div class="left">
-                    <p>2018.9.21 10:16</p>
-                    <p>套餐结束时间</p>
+                  <div class="num">
+                    255
                   </div>
                 </div>
-                <div class="power">
-                  <div class="eth">
-                    ETH
+              </div>
+            </Card>
+            </Col>
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+      </TabPane>
+      <TabPane label="我的优惠券" style="padding:0 1rem;" name="name2">
+        <Row type="flex">
+          <swiper :options="swiperOption1" ref="mySwiper">
+            <swiper-slide v-for="(item,index) in coupon">
+              <Col span="24">
+              <Card class="coupon" :class="item.type=='day'?'day':'discount'" dis-hover>
+                <h6>{{item.type=='day'?item.argument+'天算力套餐优惠':item.argument*10+'折套餐优惠'}}</h6>
+                <div class="btn">
+                  <Button type="default" ghost>立即使用</Button>
+                </div>
+                <div class="footer">
+                  <div class="left">
+                    <p>开始时间 : 2018.9.21 10:16</p>
+                    <p>到期时间 : 2018.9.21 10:16</p>
                   </div>
-                  <div class="price">
-                    <div class="text">
-                      总算力（MH/s）
-                    </div>
-                    <div class="num">
-                      255
-                    </div>
+                  <div class="right">
+                    {{item.type=='day'?item.argument+'天券':item.argument*10+'折券'}}
                   </div>
                 </div>
               </Card>
@@ -40,59 +64,33 @@
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
-        </TabPane>
-        <TabPane label="我的优惠券" style="padding:0 1rem;" name="name2">
-          <Row type="flex">
-            <swiper :options="swiperOption1" ref="mySwiper">
-              <swiper-slide v-for="(item,index) in coupon">
-                <Col span="24">
-                <Card class="coupon" :class="item.type=='day'?'day':'discount'" dis-hover>
-                  <h6>{{item.type=='day'?item.argument+'天算力套餐优惠':item.argument*10+'折套餐优惠'}}</h6>
-                  <div class="btn">
-                    <Button type="default" ghost>立即使用</Button>
-                  </div>
-                  <div class="footer">
-                    <div class="left">
-                      <p>开始时间 : 2018.9.21 10:16</p>
-                      <p>到期时间 : 2018.9.21 10:16</p>
-                    </div>
-                    <div class="right">
-                      {{item.type=='day'?item.argument+'天券':item.argument*10+'折券'}}
-                    </div>
-                  </div>
-                </Card>
-                </Col>
-              </swiper-slide>
-              <div class="swiper-pagination" slot="pagination"></div>
-            </swiper>
-          </Row>
-        </TabPane>
-      </Tabs>
-    </Layout>
-    <Layout>
-      <Tabs>
-        <TabPane label="提现记录" style="padding:0 1rem;">
-          <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
-          <div style="margin: 10px;overflow: hidden">
-            <div style="float: right;">
-              <Page :total="100" :current="1" size="small" show-sizer></Page>
-            </div>
+        </Row>
+      </TabPane>
+    </Tabs>
+  </Layout>
+  <Layout>
+    <Tabs>
+      <TabPane label="提现记录" style="padding:0 1rem;">
+        <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
+        <div style="margin: 10px;overflow: hidden">
+          <div style="float: right;">
+            <Page :total="100" :current="1" size="small" show-sizer></Page>
           </div>
-        </TabPane>
-        <TabPane label="登录记录" style="padding:0 1rem;">
-          <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
-          <div style="margin: 10px;overflow: hidden">
-            <div style="float: right;">
-              <Page :total="100" :current="1" size="small" show-sizer></Page>
-            </div>
-          </div>
-        </TabPane>
-        <div slot="extra">
-          <Input placeholder="Enter something..." clearable style="width: 200px" />
-          <Button>增加</Button>
         </div>
-      </Tabs>
-    </Layout>
+      </TabPane>
+      <TabPane label="登录记录" style="padding:0 1rem;">
+        <Table size="small" highlight-row ref="currentRowTable" :columns="columns" :data="tableData"></Table>
+        <div style="margin: 10px;overflow: hidden">
+          <div style="float: right;">
+            <Page :total="100" :current="1" size="small" show-sizer></Page>
+          </div>
+        </div>
+      </TabPane>
+      <div slot="extra">
+        <Input placeholder="Enter something..." clearable style="width: 200px" />
+        <Button>增加</Button>
+      </div>
+    </Tabs>
   </Layout>
 </div>
 </template>

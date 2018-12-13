@@ -1,53 +1,53 @@
 <template>
-<div class="layout">
-  <Layout class="main">
-    <Layout>
-      <Tabs value="name1">
-        <TabPane label="收益概况" name="name1">
-          <div class="earningbox">
-            <div class="earnings" v-for="(item,index) in earning">
-              <div class="img">
-                <img :src="item.img" width="100%">
-              </div>
-              <p>{{item.value}}</p>
-              <p>{{item.text}}</p>
+<div class="content">
+  <Layout>
+    <Tabs value="name1" :animated="false">
+      <TabPane label="收益概况" name="name1">
+        <div class="earningbox">
+          <div class="earnings" v-for="(item,index) in earning">
+            <div class="img">
+              <img :src="item.img" width="100%">
             </div>
+            <p>{{item.value}}</p>
+            <p>{{item.text}}</p>
           </div>
-        </TabPane>
-        <TabPane label="余额提现" name="name2">
-          <Row class="withdraw" type="flex" justify="space-between" style="padding:0 1rem;">
-            <Col span="8">
-            <Alert class="warning" type="warning">
-              <template slot="desc">
-                注意：<br>
-                1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
-                2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
-                3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
-              </template>
-            </Alert>
-            </Col>
-            <Col class="input" span="8">
-            <Input placeholder="请输入钱包地址" size="large" clearable style="marginBottom:1rem;" />
-            <Input placeholder="请输入提现额度" size="large" clearable style="marginBottom:1rem;" />
-            <Input placeholder="请输入提现密码" size="large" clearable />
-            </Col>
-            <Col span="8">
-            <div class="balance">
-              <div class="explain">
-                <span>可提现余额</span>
+        </div>
+      </TabPane>
+      <TabPane label="余额提现" name="name2">
+        <Row class="withdraw" type="flex" justify="space-between" style="padding:0 1rem;">
+          <Col span="8">
+          <Alert class="warning" type="warning">
+            <template slot="desc">
+              注意：<br>
+              1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
+              2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
+              3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
+            </template>
+          </Alert>
+          </Col>
+          <Col class="input" span="8">
+          <Input placeholder="请输入钱包地址" size="large" clearable style="marginBottom:1rem;" />
+          <Input placeholder="请输入提现额度" size="large" clearable style="marginBottom:1rem;" />
+          <Input placeholder="请输入提现密码" size="large" clearable />
+          </Col>
+          <Col span="8">
+          <div class="balance">
+            <div class="explain">
+              <span>可提现余额</span>
+              <Poptip trigger="hover" title="提现注意事项" content="内容" placement="top">
                 <img src="../../../../assets/icons/earning/explain.svg">
-              </div>
-              <h1>1,23165516</h1>
-              <Button type="error" long>我要提现</Button>
+              </Poptip>
             </div>
-            </Col>
-          </Row>
-        </TabPane>
-      </Tabs>
-    </Layout>
-    <Layout style="padding:1rem;">
-      <div id="myChart" :style="{width: '100%', height: '32rem'}"></div>
-    </Layout>
+            <h1>1,23165516</h1>
+            <Button type="error" long>我要提现</Button>
+          </div>
+          </Col>
+        </Row>
+      </TabPane>
+    </Tabs>
+  </Layout>
+  <Layout style="padding:1rem;">
+    <div id="myChart" :style="{width: '65rem', height: '32rem'}"></div>
   </Layout>
 </div>
 </template>
@@ -166,7 +166,9 @@ export default {
       });
     }
   },
-  components: {},
+  components: {
+    Headbar,
+  },
   mounted() {
     this.drawLine();
   },

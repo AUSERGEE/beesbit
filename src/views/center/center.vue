@@ -30,7 +30,7 @@
           </Menu>
         </Sider>
         <!-- 内容显示区域 -->
-        <Layout class="main">
+        <Layout class="children">
           <router-view></router-view>
         </Layout>
       </Layout>

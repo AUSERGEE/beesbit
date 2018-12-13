@@ -1,4 +1,4 @@
-<!-- 个人中心页面的公共导航栏 -->
+<!-- 购买算力页面的算力套餐介绍 -->
 <template>
 <section id="header">
   <Content class="noPadding">

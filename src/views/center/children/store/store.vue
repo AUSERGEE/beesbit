@@ -9,13 +9,13 @@
             <div class="attention">
               <div class="card">
                 <div class="left">
-                  <Card>
+                  <Card :bordered="false">
                     <p>累积可购买最大值</p>
                     <p>100份</p>
                   </Card>
                 </div>
                 <div class="right">
-                  <Card>
+                  <Card :bordered="false">
                     <p>单次可购买最小值</p>
                     <p>1份</p>
                   </Card>

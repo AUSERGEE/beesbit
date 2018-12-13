@@ -1,3 +1,4 @@
+<!-- 展示页面的页脚 -->
 <template>
 <section id="footer">
   <Content class="noPadding">

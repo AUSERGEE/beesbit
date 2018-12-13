@@ -1,3 +1,4 @@
+<!-- 展示页面的公共导航栏 -->
 <template>
 <section id="header">
   <Content class="noPadding">

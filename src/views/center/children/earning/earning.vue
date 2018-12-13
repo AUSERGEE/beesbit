@@ -130,16 +130,25 @@ export default {
         toolbox: {
           show: true,
           feature: {
+            dataZoom: {
+              yAxisIndex: 'none'
+            },
+            dataView: {
+              readOnly: false
+            },
+            magicType: {
+              type: ['line', 'bar']
+            },
+            restore: {},
             saveAsImage: {}
           }
         },
         dataZoom: [{
-            show: true,
-            realtime: true,
-            start: 30,
-            end: 70,
-          },
-        ],
+          show: true,
+          realtime: true,
+          start: 30,
+          end: 70,
+        }, ],
       });
     }
   },

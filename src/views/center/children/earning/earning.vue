@@ -19,10 +19,10 @@
             <Col span="8">
             <Alert type="warning">
               <template slot="desc">
-                  注意：<br>
-                  1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
-                  2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
-                  3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
+                注意：<br>
+                1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
+                2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
+                3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
               </template>
             </Alert>
             </Col>
@@ -40,8 +40,8 @@
         </TabPane>
       </Tabs>
     </Layout>
-    <Layout>
-
+    <Layout style="padding:1rem;">
+      <div id="myChart" :style="{width: '100%', height: '32rem'}"></div>
     </Layout>
   </Layout>
 </div>
@@ -96,9 +96,57 @@ export default {
       }, ]
     }
   },
-  methods: {},
+  methods: {
+    drawLine() {
+      // 基于准备好的dom，初始化echarts实例
+      let myChart = this.$echarts.init(document.getElementById('myChart'))
+      // 绘制图表
+      myChart.setOption({
+        tooltip: {},
+        xAxis: {
+          data: ["1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6"]
+        },
+        yAxis: {},
+        series: [{
+          name: '销量',
+          type: 'line',
+          smooth: true,
+          data: [5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20, 5, 20, 36, 10, 10, 20],
+          markPoint: {
+            data: [{
+                type: 'max',
+                name: '最大值'
+              },
+              {
+                type: 'min',
+                name: '最小值'
+              }
+            ]
+          },
+        }],
+        tooltip: {
+          trigger: 'axis'
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        dataZoom: [{
+            show: true,
+            realtime: true,
+            start: 30,
+            end: 70,
+          },
+        ],
+      });
+    }
+  },
   components: {},
-  mounted() {},
+  mounted() {
+    this.drawLine();
+  },
 }
 </script>
 

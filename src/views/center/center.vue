@@ -31,7 +31,7 @@
         </Sider>
         <!-- 内容显示区域 -->
         <Layout class="main">
-            <router-view></router-view>
+          <router-view></router-view>
         </Layout>
       </Layout>
     </Content>
@@ -66,18 +66,11 @@ export default {
     Headbar, //个人中心用户状态栏
   },
   watch: {
-    '$route' (to, from) {
-      if (to.path == '/') {
-        this.transitionName = 'slide-right';
-      } else {
-        this.transitionName = 'slide-left';
-      }
+    '$route'(to, from) {
+      console.log(to, from, "route");
     }
   },
   mounted() {
-    this.$router.push({
-      path: '/center/account'
-    })
   },
   beforeUpdate() {
     // this.$store.commit('changeusername', 'zhangguo');

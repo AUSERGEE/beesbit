@@ -22,8 +22,9 @@ const router = new Router({
       path: '/center',
       name: 'center',
       component: center,
+      redirect: '/center/account', //子路由默认页面
       meta: {
-        title: '账户信息-币势得'
+        title: '个人中心-币势得'
       },
       children: [{ //账户信息
         path: 'account',
@@ -33,7 +34,7 @@ const router = new Router({
         path: 'earning',
         name: 'earning',
         component: earning
-      },{ //我的收益
+      }, { //我的收益
         path: 'order',
         name: 'order',
         component: order
@@ -45,7 +46,7 @@ const router = new Router({
         path: 'store',
         name: 'store',
         component: store
-      },  ]
+      }, ]
     },
     {
       path: '/',

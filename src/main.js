@@ -5,6 +5,7 @@ import store from './store'
 import App from './App.vue'
 import vuex from 'vuex'
 import router from './router'
+import echarts from 'echarts'
 import './registerServiceWorker'
 import 'swiper/dist/css/swiper.css'
 import 'iview/dist/styles/iview.css'
@@ -17,6 +18,7 @@ import './index.less'
 import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
 
 Vue.use(iView, VueAxios, axios, VueAwesomeSwiper, vuex)
 new Vue({

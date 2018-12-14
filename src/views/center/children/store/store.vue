@@ -6,45 +6,7 @@
         <div class="forcecombo">
           <Row type="flex" :gutter="16">
             <Col span="12">
-            <div class="attention">
-              <div class="card">
-                <div class="left">
-                  <Card :bordered="false">
-                    <p>累积可购买最大值</p>
-                    <p>100份</p>
-                  </Card>
-                </div>
-                <div class="right">
-                  <Card :bordered="false">
-                    <p>单次可购买最小值</p>
-                    <p>1份</p>
-                  </Card>
-                </div>
-              </div>
-              <div class="banner">
-                <img src="../../../../assets/icons/store/store.svg" width="100%">
-              </div>
-              <div class="hint">
-                <Alert class="warning" type="warning">
-                  <template slot="desc">
-                    注意：<br>
-                    1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
-                    2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
-                    3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
-                  </template>
-                </Alert>
-              </div>
-              <div class="explain">
-                <Alert class="warning" type="warning">
-                  <template slot="desc">
-                    注意：<br>
-                    1. 提现申请成功后的24小时内到账，且24小时内只可提现一次 。 <br>
-                    2. 提现：余额不足为1的部分只能提取到小数点后三位。 <br>
-                    3. 手续费：提现将收取手续费(手续费: 为0.001ETH)
-                  </template>
-                </Alert>
-              </div>
-            </div>
+            <Attention></Attention>
             </Col>
             <Col span="12">
             <div class="form">
@@ -93,11 +55,11 @@
               <div class="discounts">
                 <Tabs value="1">
                   <TabPane label="优惠卷" name="1">
-                    <Row type="flex" justify="space-between">
-                      <Col span="6"  v-for="item in 4">
-                      <Card :bordered="false" style="width:6rem">
-                        <p slot="title">Borderless card</p>
-                        <p>Content of card</p>
+                    <Row type="flex" :gutter="15">
+                      <Col v-for="(item,index) in 3" @click.native="chooseCoupon(index)" :key="index">
+                      <Card style="width:7.5rem" :class="activeCoupon==index?(choose?'active':''):''">
+                        <p>9折券</p>
+                        <p>30天算力套餐</p>
                       </Card>
                       </Col>
                     </Row>
@@ -112,7 +74,7 @@
                 <div class="btn">
                   <p>算力协议</p>
                   <div class="">
-                    <Button type="default">请阅读算力协议</Button>
+                    <Button type="default" size="default">请阅读算力协议</Button>
                   </div>
                 </div>
               </div>
@@ -137,11 +99,11 @@
       <TabPane label="B1812A期两年算力套餐" name="name3">3</TabPane>
     </Tabs>
   </Layout>
-
 </div>
 </template>
 <script>
 import Headbar from '#/headbar'
+import Attention from '#/attention'
 import {
   swiper,
   swiperSlide
@@ -182,13 +144,24 @@ export default {
       ],
       model: '1',
       number: 0,
+      choose: false, //是否选中优惠券
+      activeCoupon: 0,
     }
   },
-  methods: {},
+  methods: {
+    chooseCoupon(index) {
+      console.log(index);
+      this.activeCoupon = index
+      this.choose = !this.choose
+    }
+  },
   components: {
     Headbar,
+    Attention,
   },
-  mounted() {},
+  mounted() {
+
+  },
 }
 </script>
 

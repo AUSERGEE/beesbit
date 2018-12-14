@@ -1,2 +1,2 @@
-import Centerheader from './centerheader.vue'
-export default Centerheader
+import Attention from './attention.vue'
+export default Attention

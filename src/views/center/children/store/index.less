@@ -16,89 +16,6 @@
         overflow: inherit;
 
         .forcecombo {
-          .attention {
-            padding: 1rem;
-            background: white;
-            border-radius: 5px;
-
-            .card {
-              display: flex;
-              justify-content: space-between;
-
-              .ivu-card {
-                background: transparent;
-                box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.05);
-
-                /deep/.ivu-card-body {
-                  padding: 0;
-                }
-              }
-
-              .left {
-                width: 15rem;
-
-                p {
-                  margin: 0;
-                  padding: 0.5rem 0;
-                  text-align: center;
-                }
-
-                p:first-of-type {
-                  color: #777777;
-                  font-size: 1rem;
-                  background: rgba(255,251,248,1);
-                  border-bottom: 1px solid #EB5648;
-                }
-
-                p:last-of-type {
-                  font-size: 1rem;
-                  color: #EB5648;
-                  font-weight: 600;
-                }
-              }
-
-              .right {
-                width: 15rem;
-
-                p {
-                  margin: 0;
-                  padding: 0.5rem 0;
-                  text-align: center;
-                }
-
-                p:first-of-type {
-                  color: #777777;
-                  font-size: 1rem;
-                  background: rgba(236,246,255,1);
-                  border-bottom: 1px solid #34A1FF;
-                }
-
-                p:last-of-type {
-                  font-size: 1rem;
-                  color: #34A1FF;
-                  font-weight: 600;
-                }
-              }
-            }
-
-            .banner {
-              img {
-                width: 15rem;
-                height: 15rem;
-                margin: 3rem 0;
-              }
-            }
-
-            .explain,
-            .hint {
-              .warning {
-                /deep/span.ivu-alert-desc {
-                  color: #FFA86E;
-                  font-size: 12px;
-                }
-              }
-            }
-          }
 
           .form {
             background: white;
@@ -111,14 +28,59 @@
                 color: #777777;
                 margin: 0.5rem 0;
               }
+
               .ivu-input-number {
                 width: 100%;
               }
             }
 
-            .discounts {
+            /deep/.discounts {
               height: 18rem;
               overflow: hidden;
+
+              .ivu-row-flex {
+                padding: 1rem 0.2rem;
+
+                .active {
+                  border: 1px solid rgba(235,86,72,1);
+
+                  .ivu-card-body {
+                    padding: 0;
+                    transition: all 0.3s;
+
+                    p:first-of-type {
+                      padding: 0.5rem 1rem;
+                      background: rgba(255,244,236,1)!important;
+                    }
+                  }
+                }
+
+                .ivu-card {
+                  width: 10rem;
+
+                  .ivu-card-body {
+                    padding: 0;
+
+                    p {
+                      margin: 0;
+                      text-align: center;
+                    }
+
+                    p:first-of-type {
+                      padding: 0.5rem 1rem;
+                      background: rgba(248,248,248,1);
+                      border-top-left-radius: 5px;
+                      border-top-right-radius: 5px;
+                    }
+
+                    p:last-of-type {
+                      color: rgba(177,177,177,1);
+                      font-size: 12px;
+                      padding: 0.5rem 1rem;
+                    }
+                  }
+                }
+              }
             }
 
             .protocol {
@@ -126,20 +88,28 @@
               border-radius: 5px;
               height: 8rem;
               display: flex;
-
+              justify-content: flex-start;
 
               .img {
                 margin-left: 2rem;
+
                 img {
                   width: 8rem;
                   height: 8rem;
                 }
               }
+
               .btn {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                margin-left: 2rem;
+
+                p {
+                  font-weight: 400;
+                  color: rgba(177,177,177,1);
+                }
               }
             }
 

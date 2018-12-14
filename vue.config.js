@@ -24,6 +24,7 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('#', resolve('src/components'))
+      .set('$', resolve('src/assets'))
   },
 
   configureWebpack: {
@@ -42,15 +43,18 @@ module.exports = {
       ]
     }
   },
+  devServer: {
+    open: true,
+  },
   productionSourceMap: true,
 
   baseUrl: BASE_URL,
   lintOnSave: false,
   outputDir: 'beesbit',
-  assetsDir: 'assest',
+  assetsDir: 'assets',
   pluginOptions: { // 第三方插件配置
 
   },
-  // runtimeCompiler: true,
-  // productionSourceMap: true,
+  runtimeCompiler: true,
+    productionSourceMap: true,
 }

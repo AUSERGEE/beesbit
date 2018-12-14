@@ -64,7 +64,45 @@
                       </Col>
                     </Row>
                   </TabPane>
-                  <TabPane label="ETH余额抵扣" name="2">标签二的内容</TabPane>
+                  <TabPane label="ETH余额抵扣" name="2">
+                    <div class="balance">
+                      <div class="choose">
+                        <div class="top">
+                          <div class="left">
+                            <img src="../../../../assets/icons/store/balance.svg" alt="">
+                            <div class="text">
+                              <p>ETH余额</p>
+                              <p>0.975554 ETH</p>
+                            </div>
+                          </div>
+                          <div class="right">
+                            <img src="../../../../assets/icons/store/exchange.svg" alt="">
+                            <div class="text">
+                              <p>实时RMB/ETH汇率</p>
+                              <p>636.669:1</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="center">
+                          <Button type="text" size="small">全部抵扣</Button>
+                        </div>
+                        <div class="bottom">
+                          <Row type="flex" justify="space-around" :gutter="10">
+                            <Col span="10" class="left">
+                            <span>可抵扣</span>
+                            <span>32132231</span>
+                            </Col>
+                            <Col span="10" class="right">
+                            <InputNumber size="large" style="width:100%;"></InputNumber>
+                            </Col>
+                          </Row>
+                        </div>
+                      </div>
+                      <div class="btn">
+                        <Button type="error">确认</Button>
+                      </div>
+                    </div>
+                  </TabPane>
                 </Tabs>
               </div>
               <div class="protocol" :class="agreeProtocol?'protocolActive':''">

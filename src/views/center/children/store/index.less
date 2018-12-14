@@ -34,11 +34,11 @@
             }
 
             /deep/.discounts {
-              height: 18rem;
+              height: 17.5rem;
               overflow: hidden;
 
               .ivu-row-flex {
-                padding: 1rem 0.2rem;
+                padding: .5rem 0.2rem;
 
                 .active {
                   border: 1px solid rgba(235,86,72,1);
@@ -80,6 +80,72 @@
                   }
                 }
               }
+
+              .balance {
+                .choose {
+                  background: rgba(255,255,255,1);
+                  border: 1px solid rgba(255,168,110,1);
+                  border-radius: 5px;
+                  padding: 0.5rem;
+
+                  .top {
+                    display: flex;
+                    justify-content: space-around;
+
+                    .left {
+                      display: flex;
+                      align-items: center;
+
+                      img {
+                        width: 2rem;
+                        height: 2rem;
+                        margin-right: 1rem;
+                      }
+
+                      .text {
+                        p:first-of-type {
+                          font-size: 12px;
+                          color: #B1B1B1;
+                        }
+                      }
+                    }
+
+                    .right {
+                      display: flex;
+                      align-items: center;
+
+                      img {
+                        width: 2rem;
+                        height: 2rem;
+                        margin-right: 1rem;
+                      }
+
+                      .text {
+                        p:first-of-type {
+                          font-size: 12px;
+                          color: #B1B1B1;
+                        }
+                      }
+                    }
+                  }
+
+                  .center {}
+
+                  .bottom {
+                    .left {
+                      display: flex;
+                      justify-content: space-between;
+                      background: rgba(255,249,244,1);
+                      border-radius: 2px;
+                      align-items: center;
+                    }
+                  }
+                }
+
+                .btn {
+                  margin-top: 1rem;
+                }
+              }
             }
 
             .protocol {
@@ -113,7 +179,7 @@
             }
 
             .protocolActive {
-              background:rgba(255,249,244,1);
+              background: rgba(255,249,244,1);
             }
 
             .submit {

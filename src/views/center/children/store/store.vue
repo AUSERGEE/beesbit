@@ -55,9 +55,9 @@
               <div class="discounts">
                 <Tabs value="1">
                   <TabPane label="优惠卷" name="1">
-                    <Row type="flex" :gutter="15">
-                      <Col v-for="(item,index) in 3" @click.native="chooseCoupon(index)" :key="index">
-                      <Card style="width:7.5rem" :class="activeCoupon==index?(choose?'active':''):''">
+                    <Row type="flex" :gutter="10">
+                      <Col v-for="(item,index) in 4" @click.native="chooseCoupon(index)" :key="index">
+                      <Card style="width:7rem" :class="activeCoupon==index?(choose?'active':''):''">
                         <p>9折券</p>
                         <p>30天算力套餐</p>
                       </Card>
@@ -67,14 +67,15 @@
                   <TabPane label="ETH余额抵扣" name="2">标签二的内容</TabPane>
                 </Tabs>
               </div>
-              <div class="protocol">
+              <div class="protocol" :class="agreeProtocol?'protocolActive':''">
                 <div class="img">
-                  <img src="../../../../assets/icons/store/protocol.svg" width="100%">
+                  <img :src="agreeProtocol?protocolImg[1]:protocolImg[0]" width="100%">
                 </div>
                 <div class="btn">
-                  <p>算力协议</p>
+                  <p v-if="!agreeProtocol">算力协议</p>
+                  <p v-else>已阅读算力协议</p>
                   <div class="">
-                    <Button type="default" size="default" @click.native="modalShow = true">请阅读算力协议</Button>
+                    <Button v-show="!agreeProtocol" type="default" size="default" @click.native="modalShow = true">请阅读算力协议</Button>
                   </div>
                 </div>
               </div>
@@ -85,7 +86,7 @@
                     <h1>1234元</h1>
                     </Col>
                     <Col span="12">
-                    <Button type="error" long>同意算力协议后进行订单确认</Button>
+                    <Button type="error" long :disabled="!agreeProtocol">同意算力协议后进行订单确认</Button>
                     </Col>
                   </Row>
                 </div>
@@ -99,7 +100,7 @@
       <TabPane label="B1812A期两年算力套餐" name="name3">3</TabPane>
     </Tabs>
   </Layout>
-  <ProtocolModal :show.native="modalShow" @state="state"></ProtocolModal>
+  <ProtocolModal :show.native="modalShow" @state="state" @agree="agree"></ProtocolModal>
 </div>
 </template>
 <script>
@@ -130,6 +131,10 @@ export default {
           prevEl: '.swiper-button-prev'
         }
       },
+      protocolImg: [
+        require('../../../../assets/icons/store/protocol.svg'),
+        require('../../../../assets/icons/store/protocol-active.svg')
+      ],
       cityList: [{
           value: '1',
           label: '1'
@@ -146,8 +151,9 @@ export default {
       model: '1',
       number: 0,
       choose: false, //是否选中优惠券
-      activeCoupon: 0,
-      modalShow: false,
+      activeCoupon: 0, //被选中的优惠券序号
+      modalShow: false, //算力协议modal
+      agreeProtocol: false, //用户是否同意算力协议
     }
   },
   methods: {
@@ -159,6 +165,11 @@ export default {
       console.log(val, 'changeModalState');
       this.modalShow = val
     },
+    agree(val) {
+      this.agreeProtocol = val
+      console.log(this.agreeProtocol);
+      this.$Message.success('已同意算力协议');
+    }
   },
   watch: {
     modalShow: function(val, oldval) {

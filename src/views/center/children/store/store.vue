@@ -74,7 +74,7 @@
                 <div class="btn">
                   <p>算力协议</p>
                   <div class="">
-                    <Button type="default" size="default">请阅读算力协议</Button>
+                    <Button type="default" size="default" @click.native="modalShow = true">请阅读算力协议</Button>
                   </div>
                 </div>
               </div>
@@ -99,11 +99,13 @@
       <TabPane label="B1812A期两年算力套餐" name="name3">3</TabPane>
     </Tabs>
   </Layout>
+  <ProtocolModal :show.native="modalShow" @state="state"></ProtocolModal>
 </div>
 </template>
 <script>
 import Headbar from '#/headbar'
 import Attention from '#/attention'
+import ProtocolModal from '#/protocolModal'
 import {
   swiper,
   swiperSlide
@@ -111,7 +113,6 @@ import {
 export default {
   data() {
     return {
-      modal: false,
       username: this.$store.state.username,
       usertelphone: this.$store.state.usertelphone,
       swiperOption: {
@@ -146,18 +147,28 @@ export default {
       number: 0,
       choose: false, //是否选中优惠券
       activeCoupon: 0,
+      modalShow: false,
     }
   },
   methods: {
     chooseCoupon(index) {
-      console.log(index);
       this.activeCoupon = index
       this.choose = !this.choose
+    },
+    state(val) {
+      console.log(val, 'changeModalState');
+      this.modalShow = val
+    },
+  },
+  watch: {
+    modalShow: function(val, oldval) {
+      console.log(val, 'modalShow');
     }
   },
   components: {
     Headbar,
     Attention,
+    ProtocolModal, //算力协议
   },
   mounted() {
 
